@@ -1,5 +1,5 @@
-import Welcome from './Components/Welcome';
-import Contacts from './Components/Contacts';
+import Landing from './Components/Pages/Landing';
+import Contacts from './Components/Pages/Contacts';
 import { Component } from 'react';
 import './App.css';
 
@@ -13,7 +13,8 @@ import './App.css';
     render(){
     return (
       <div className="App">
-        <Welcome/>
+      
+        <Landing/>
         <Contacts/>
         
       </div>
