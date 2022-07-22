@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 // import NavLink from "react-bootstrap"
 import {NavLink} from "react-router-dom"
 
-const Navigationbar =()=>{
+const Navigationbar =(props)=>{
     return(
 
         <div>
@@ -19,6 +19,7 @@ const Navigationbar =()=>{
             <NavLink to="/" >Home</NavLink>
             <NavLink to="/contacts" >Contacts</NavLink>
             <NavLink to="/portfolio" >Portfolio</NavLink>
+            { props.teacher && <span>{props.teacher.username}</span>}
           </Nav>
         </Container>
       </Navbar>

@@ -18,13 +18,14 @@ const LoginForm =(props)=>{
     e.preventDefault();
     console.log(formData);
 
-    axios.post("http://localhost:5000/auth", formData).then((res) => {
+    axios.post("http://elle-teacherdirectory-api.herokuapp.com/auth", formData).then((res) => {
       console.log(res.data);
+   
 
-      if (res.data.token && res.data.user) {
-        localStorage.setItem("userToken", res.data.token);
-        props.setUser(res.data.user)
-        history.push("/home");
+      if (res.data.token && res.data.teacher) {
+        localStorage.setItem("teacherToken", res.data.token);
+        props.setTeacher(res.data.teacher)
+        history.push("/portfolio");
       } else {
         console.error(res.data);
       }

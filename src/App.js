@@ -4,17 +4,21 @@ import { Route, Switch } from "react-router-dom";
 import Landing from './Components/Pages/Landing';
 import Contacts from './Components/Pages/Contacts';
 import Portfolio from './Components/Pages/Portfolio';
+import UpdateAssignment from "./Components/Forms/UpdateAssignment"
 
 const App = () => {
-
-    const [user, setUser] = useState(null)
+  
+    const [teacher, setTeacher] = useState(null)
 
     return (
       <div className="App">
         <Switch>
-          <Route exact path='/' component={Landing} setUser={setUser}/>
-          <Route path='/portfolio' component={Portfolio}/>
-          <Route path='/contacts' component={Contacts}/>
+          <Route exact path='/' render={routerProps => <Landing {...routerProps} setTeacher={setTeacher}/> }/>
+          <Route path='/portfolio' render={routerProps => <Portfolio {...routerProps} teacher={teacher} /> }/>
+          <Route path='/contacts' render={routerProps => <Contacts {...routerProps} /> }/>
+          {/* <Route path='/portfolio/:id' component={UpdateAssignment}/> */}
+          {/* <Route path='/contacts' component={Contacts}/> */}
+          <Route path='/update/:id' component={UpdateAssignment}/>
         </Switch>      
         
          

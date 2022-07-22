@@ -24,14 +24,14 @@ useEffect(()=>{
     .then(data => setMyAccount(data))
  },[])
     return(
-       <div class="buttonContainer">
+       <div className="buttonContainer">
         <Navigationbar/>
         <h2> Lets Connect </h2>
            
             <form>
-            <Button  id="LinkedIn" action="https://www.linkedin.com/in/elle-davis/" method="get" target="_blank" variant="primary" type="submit">< AiOutlineLinkedin class="icon"/></Button>
-            <Button  id="Github" action="https://github.com/ElleDavis" method="get" target="_blank" variant="primary" type="submit">< FiGithub class="icon"/></Button>
-            <Button id="Email" action="" method="get" target="_blank" variant="primary" href = "mailto: ShanitriceDavis@gmail.com">< HiOutlineMail class="icon"/></Button> 
+            <Button  id="LinkedIn" action="https://www.linkedin.com/in/elle-davis/" method="get" target="_blank" variant="primary" type="submit">< AiOutlineLinkedin className="icon"/></Button>
+            <Button  id="Github" action="https://github.com/ElleDavis" method="get" target="_blank" variant="primary" type="submit">< FiGithub className="icon"/></Button>
+            <Button id="Email" action="" method="get" target="_blank" variant="primary" href = "mailto: ShanitriceDavis@gmail.com">< HiOutlineMail className="icon"/></Button> 
             </form>
             {/* <div>
                 {myaccount && (
@@ -57,8 +57,9 @@ useEffect(()=>{
                         <Card.Img variant="top" src={myaccount.avatar_url} alt={myaccount.name} />
                         <Card.Body>
                             {/* <Card.Title>{myaccount.name}</Card.Title> */}
-                            <Card.Text>{myaccount.bio}</Card.Text>
-                            <Button variant="primary" href={myaccount.html_url}>Take a Look</Button>
+                            {/* <Card.Text id="cardtext">{myaccount.bio}</Card.Text> */}
+                            {/* <p id="cardtext">{myaccount.bio}</p> */}
+                            <Button variant="primary" href={myaccount.html_url}>Go to Github</Button>
                         </Card.Body>
                  </Card>
                 )}
