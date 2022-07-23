@@ -4,9 +4,6 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 
 const LoginForm =(props)=>{
-  
-  <Navigationbar/>
-      // <h2> LoginForm  </h2>
   const history = useHistory();
   const [formData, setFormData] = useState({
     email: "",
@@ -18,10 +15,10 @@ const LoginForm =(props)=>{
     e.preventDefault();
     console.log(formData);
 
-    axios.post("http://elle-teacherdirectory-api.herokuapp.com/auth", formData).then((res) => {
+    axios.post("http://elle-teacherdirectory-api.herokuapp.com/auth", formData)
+    .then((res) => {
       console.log(res.data);
    
-
       if (res.data.token && res.data.teacher) {
         localStorage.setItem("teacherToken", res.data.token);
         props.setTeacher(res.data.teacher)
@@ -37,9 +34,7 @@ const LoginForm =(props)=>{
       <h2> LoginForm  </h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
-          <label className="form-label" htmlFor="email">
-            Email
-          </label>
+          <label className="form-label" htmlFor="email">Email</label>
           <input
             type="text"
             className="form-control"
@@ -53,9 +48,7 @@ const LoginForm =(props)=>{
         </div>
 
         <div className="mb-3">
-          <label className="form-label" htmlFor="password">
-            Password
-          </label>
+          <label className="form-label" htmlFor="password">Password</label>
           <input
             type="password"
             className="form-control"

@@ -21,7 +21,7 @@ const Portfolio =(props)=>{
 
   const handleDelete = (assignment) => {
     axios
-      .delete("http://elle-teacherdirectory-api.herokuapp.com/assignment/${assignment._id}", {
+      .delete(`http://elle-teacherdirectory-api.herokuapp.com/assignment/${assignment._id}`, {
         headers: {
           "x-auth-token": localStorage.getItem("teacherToken"),
         },

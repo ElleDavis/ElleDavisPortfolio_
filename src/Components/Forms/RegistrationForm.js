@@ -3,7 +3,7 @@ import axios from 'axios';
 import {useHistory } from 'react-router-dom'
 
 const RegisterForm = (props) => {
-    const history = useHistory()
+  const history = useHistory()
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -18,6 +18,7 @@ const RegisterForm = (props) => {
     axios.post('http://elle-teacherdirectory-api.herokuapp.com/teacher', formData)
     .then(res => {
         console.log(res.data)
+
         if (res.data.token && res.data.teacher){
           localStorage.setItem('teacherToken', res.data.token)
           props.setTeacher(res.data.teacher)
@@ -41,6 +42,7 @@ const RegisterForm = (props) => {
 
   return (
     <div>
+      <h2> RegistrationForm  </h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
         <label className="form-label" htmlFor="username">Username</label>
